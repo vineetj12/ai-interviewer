@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ai interview</title>
+    <link rel="icon" type="image/png" href="logo1.png">
+    <style>
+        #background-video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            object-fit: cover;
+            z-index: -1;
+        }
+    </style>
+</head>
+<body>
+    <video autoplay loop muted playsinline id="background-video">
+        <source src="loader.mp4" type="video/mp4">
+    </video> 
+
+    <script>
+        setTimeout(function() {
+            window.location.href = "aifrontend.html"; 
+        }, 2200);
+    </script>
+</body>
+</html>
