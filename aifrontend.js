@@ -100,7 +100,7 @@ function signOut() {
   localStorage.removeItem("username");
   localStorage.removeItem("profileImage");
   alert("Signed out!");
-  location.reload();
+  window.location.href="index.html";
 }
 
 function startinterview() {
