@@ -7,8 +7,9 @@ async function loadFeedback() {
           'username': localStorage.getItem("username"),
         },
       });
+
       const data = await res.json();
-  
+      console.log(data)
       document.getElementById('overall-score').textContent = `Score: ${data.overall_score}`;
       document.getElementById('overall-feedback').textContent = data.overall_feedback;
       document.getElementById('date').textContent = data.date;
@@ -32,6 +33,14 @@ async function loadFeedback() {
         improvementList.appendChild(li);
       });
   
+      // Adding Posture Status and Gaze Information
+      const postureStatus = window.result? "Good":"Bad";
+      const percentageOffGaze = window.offLaptopPercent;
+
+      // Update the DOM with posture and gaze information
+      document.getElementById('posture-status').textContent = `Posture Status: ${postureStatus}`;
+      document.getElementById('percentage-off-gaze').textContent = `Percentage Off Gaze: ${percentageOffGaze}%`;
+
     } catch (error) {
       console.error("❌ Error loading feedback:", error);
       document.querySelector('.container').innerHTML = "<p>Failed to load feedback. Please try again.</p>";
