@@ -34,12 +34,12 @@ async function loadFeedback() {
       });
   
       // Adding Posture Status and Gaze Information
-      const postureStatus = window.result? "Good":"Bad";
-      const percentageOffGaze = window.offLaptopPercent;
+      // const postureStatus = window.result? "Good":"Bad";
+      // const percentageOffGaze = window.offLaptopPercent;
 
       // Update the DOM with posture and gaze information
-      document.getElementById('posture-status').textContent = `Posture Status: ${postureStatus}`;
-      document.getElementById('percentage-off-gaze').textContent = `Percentage Off Gaze: ${percentageOffGaze}%`;
+      // document.getElementById('posture-status').textContent = `Posture Status: ${postureStatus}`;
+      // document.getElementById('percentage-off-gaze').textContent = `Percentage Off Gaze: ${percentageOffGaze}%`;
 
     } catch (error) {
       console.error("❌ Error loading feedback:", error);
