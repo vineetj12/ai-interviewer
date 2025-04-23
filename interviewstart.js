@@ -113,70 +113,7 @@ async function submitAnswer() {
     }
 }
 
-// async function submitAnswer() {
-//     old = "";
-//     const answer = document.getElementById("answer").value.trim();
-//     if (!answer) {
-//         alert("Please enter your answer.");
-//         return;
-//     }
 
-//     // Determine postureStatus based on the result
-//     const postureStatus = result ? "Good" : "Bad"; // Apply the result-based logic
-
-//     // Calculate the off-laptop percentage
-//     const offLaptopPercent = calculateOffLaptopPercentage();
-
-//     if (i === 0) {
-//         numberOfQuestions = parseInt(answer);
-//         if (isNaN(numberOfQuestions) || numberOfQuestions <= 0) {
-//             alert("Please enter a valid number of questions.");
-//             return;
-//         }
-//         i++;
-//         document.getElementById("answer").value = "";
-//         start();
-//     } else if (i === 1) {
-//         domain = answer;
-//         i++;
-//         document.getElementById("answer").value = "";
-//         start();
-//     } else {
-//         try {
-//             const response = await fetch("https://aiserver-phi.vercel.app/addanswer", {
-//                 method: "POST",
-//                 headers: {
-//                     "Content-Type": "application/json",
-//                     "username": username
-//                 },
-//                 body: JSON.stringify({
-//                     answer,
-//                     postureStatus,       // Send the determined posture status
-//                     offLaptopPercent  // Send the off-laptop gaze percentage
-//                 })
-//             });
-
-//             if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
-
-//             alert("Answer submitted!");
-//             document.getElementById("answer").value = "";
-
-//             if (qno < numberOfQuestions) {
-//                 start();
-//             } else {
-//                 stopEyeTracking();
-//                 stopPostureTracking();
-//                 // const offLaptopPercent = calculateOffLaptopPercentage();
-//                 // console.log("✅ Off-Laptop Time:", offLaptopPercent, "%");
-//                 saveRecording();
-//                 getScore();
-//             }
-//         } catch (error) {
-//             console.error("Error submitting answer:", error);
-//             alert("Failed to submit answer. Check console for details.");
-//         }
-//     }
-// }
 
 function getScore() {
     window.location.href = "getscore.html";
