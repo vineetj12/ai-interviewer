@@ -1,39 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Interview System</title>
-        <link rel="icon" type="image/png" href="logo1.png">
-        <link rel="stylesheet" href="interviewstart.css">
-    </head>
-    <body>
-        <section>
-            <img src="logo.png" alt="Logo" class="logo">
-            <h2 id="is">Interview System</h2>
-            <div id="home"><button id="b" onclick="home()">home</button></div>
-            <div class="login-box">
-                <p id="question"></p>
-            </div>
-            <div id="startdiv"><button id="st" onclick="start()">start</button></div>
-            
-            <!-- Video element for displaying the camera feed -->
-            <video id="uservedio" width="1140" height="480" autoplay muted></video>
-            
-            <div id="micdiv">
-                <button id="mic">
-                    <img src="mic.png" alt="Mic Icon">
-                </button>
-            </div>
-            <div id="cam">
-                <button id="camera">camera</button>
-            </div>
-            <div id="ans"> 
-                <textarea id="answer" placeholder="Write your answer here..."></textarea>
-                <button onclick="submitAnswer()">Submit Answer</button>
-            </div>
-        </section>
 
-        <script src="interviewstart.js"></script>
-    </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interview System</title>
+    <link rel="icon" type="image/png" href="logo1.png">
+    <link rel="stylesheet" href="interviewstart.css">
+</head>
+
+<body>
+    <!-- <div id="eye-dot" style="
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: red;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+"></div> -->
+
+<div id="posture-status" style="
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 8px 12px;
+    border-radius: 10px;
+    font-weight: bold;
+    z-index: 10000;
+    font-family: sans-serif;
+">Posture: --</div>
+
+    <section>
+        <img src="logo.png" alt="Logo" class="logo">
+        <h2 id="is">Interview System</h2>
+        <div id="home"><button id="b" onclick="home()">home</button></div>
+        <div class="login-box">
+            <p id="question"></p>
+        </div>
+        <div id="startdiv"><button id="st" onclick="start()">start</button></div>
+
+        <!-- Video element for displaying the camera feed -->
+        <video id="uservedio" width="1140" height="480" autoplay muted></video>
+
+        <div id="micdiv">
+            <button id="mic">
+                <img src="mic.png" alt="Mic Icon">
+            </button>
+        </div>
+        <div id="cam">
+            <button id="camera">camera</button>
+        </div>
+        <div id="ans">
+            <textarea id="answer" placeholder="Write your answer here..."></textarea>
+            <button onclick="submitAnswer()">Submit Answer</button>
+        </div>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/pose/pose.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js"></script>
+    <script src="https://webgazer.cs.brown.edu/webgazer.js"></script>
+    <script src="interviewstart.js"></script>
+    <!-- MediaPipe Pose and Utils -->
+
+</body>
+
 </html>
